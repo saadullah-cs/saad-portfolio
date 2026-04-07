@@ -188,6 +188,77 @@ body, .dark-background, .section {
     color: #fff !important;
 }
 
+/* ========================================== */
+/* RESPONSIVE HERO TYPOGRAPHY & MOBILE FIXES */
+/* ========================================== */
+
+/* Default Desktop Sizes */
+.hero-name {
+  font-size: 4.5rem;
+}
+.hero-tagline {
+  font-size: 1.5rem;
+}
+
+/* Mobile Sizes (Triggers on screens smaller than 768px) */
+@media (max-width: 768px) {
+  .hero-name {
+    font-size: 2.8rem; /* Shrinks the giant name */
+    margin-bottom: 10px;
+  }
+  .hero-tagline {
+    font-size: 1.1rem; /* Shrinks the typing text */
+  }
+  
+  /* Forces the Mobile Menu overlay to be the absolute top layer */
+  .mobile-nav-active .header {
+    z-index: 99999 !important; 
+  }
+}
+
+/* ========================================== */
+/* ULTRA-PREMIUM MOBILE GLASSMORPHISM FIXES   */
+/* ========================================== */
+
+@media (max-width: 992px) {
+  
+  /* 1. The "Soft Dark Cloud" Fix (Zero sharp edges, maximum readability) */
+  #hero .container {
+    margin-top: 20vh !important; 
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+    /* The Magic: A smooth pitch-black center that fades out to invisible */
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0) 75%) !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Make the text slightly thicker on mobile so it commands attention */
+  .hero-name {
+    font-weight: 800 !important;
+    text-shadow: 0 0 10px rgba(0,0,0,1) !important;
+  }
+  
+  .hero-tagline {
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(0,0,0,1) !important;
+  }
+
+  /* 2. The Premium Mobile Menu Upgrade */
+  /* This kills the ugly solid gray and replaces it with cyberpunk glass */
+  .mobile-nav-active .navmenu ul {
+    background: rgba(10, 10, 10, 0.75) !important; /* Dark, see-through background */
+    backdrop-filter: blur(25px) !important; /* Heavy blur so the site behind it looks icy */
+    -webkit-backdrop-filter: blur(25px) !important;
+    border: 1px solid rgba(0, 191, 255, 0.2) !important;
+    border-radius: 15px; /* Smooths out the sharp corners */
+    box-shadow: 0 0 30px rgba(0, 191, 255, 0.05) !important;
+  }
+}
+
 /* Cyberpunk Preloader Styles */
 .cyber-preloader {
   position: fixed;
