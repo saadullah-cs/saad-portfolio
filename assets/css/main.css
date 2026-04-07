@@ -278,6 +278,14 @@ body, .dark-background, .section {
   animation: fog-breathe 8s infinite alternate ease-in-out;
 }
 
+/* Nuke Craftivo's built-in dark overlays from the Hero section */
+#hero::before, 
+#hero::after {
+  background: transparent !important;
+  display: none !important;
+  opacity: 0 !important;
+}
+
 @keyframes fog-breathe {
   0% { opacity: 0.1; transform: scale(1); }
   100% { opacity: 0.4; transform: scale(1.1); }
